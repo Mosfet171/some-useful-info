@@ -73,11 +73,9 @@
     - Can be anything
     - Webserver
     - App Server
-
 2. GPU 
     - Graphics Processor 
     - ML/AI
-
 3. HPC
     - High Performance Computing
     - Frequency Requirements 
@@ -91,15 +89,12 @@
     - Pictures, Documents, etc  
     - Good archiving solution
     - Data/Graphics on webservers
-
 2. Block Storage
-
 3. File Storage
 
 #### Network
 - Needs to be dimensionned 
 - How much data simultaneously (Gbps, Mbps ?)
-
 
 #### Example for IaaS : AI workload
 - 1B pictures in Object Storage

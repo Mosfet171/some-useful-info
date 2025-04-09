@@ -20,11 +20,11 @@ Solution: Containers\\
     - Contains Runtime
     - Binaries
     - Libraries
-\\
+
 - Instead of supervisor now have runtime engine (Docker: Docker Engine)
 - We create a manifest, push registry and push image
 - Much more lightweight
-\\
+
 Imagine now we want to integrate a third-party app that does image recognition
 - We create a python service that uses the third-party through API
 - In the VM case, we would create a VM that integrates the Node.js+Python combined
@@ -34,8 +34,9 @@ Imagine now we want to integrate a third-party app that does image recognition
     
 - In the Container case, we just deploy 1 copy of the Python script
 - Then other containers access it 
-\\
-- Other great thing about containers: if 1 container isn't using as much resources, everything is shared so other containers can use it ! 
+
+Other great thing about containers: 
+- if 1 container isn't using as much resources, everything is shared so other containers can use it ! 
 
 ## Container Orchestration
 - Imagine FrontEnd+BackEnd+DB
