@@ -41,7 +41,6 @@ Other great thing about containers:
 ## Container Orchestration
 - Imagine FrontEnd+BackEnd+DB
     - A dev would focus on this 
-    
 - On the bottom we would have a "master" for the orchestration 
 - For example Kubernetes
 
