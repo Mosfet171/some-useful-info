@@ -5,4 +5,5 @@ I gathered here some information about IT-related technologies or guidelines tha
 * Containerization
 * Cloud Technologies
 * APIs
+* Databases
 * Recent EU Guidelines
