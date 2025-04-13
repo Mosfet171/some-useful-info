@@ -103,5 +103,112 @@ LEFT JOIN orders o ON u.id = o.user_id
 GROUP BY u.name
 ORDER BY order_count DESC;
 ``` 
-
 This gets each user's name and how many orders they’ve made, sorted from most to least.
+
+## ⚡ Indexing
+
+### 🧠 What is Indexing?
+Indexing is like a book’s table of contents: it helps the database find data faster without scanning the entire table.
+
+### 🔍 Without an index:
+If you query:
+
+```
+SELECT * FROM users WHERE email = 'alice@example.com';
+```
+
+The database may need to scan every row in the users table to find a match (called a full table scan).
+
+### 🚀 With an index:
+It uses a fast lookup structure (often a B-tree or hash) to jump directly to the matching rows — much faster!
+
+### ✅ Benefits:
+- Drastically improves read/query speed for large datasets
+- Helps in searching, filtering (WHERE), joining, and sorting (ORDER BY)
+
+### ❌ Downsides:
+- Slows down writes (INSERT, UPDATE, DELETE) because the index must also be updated
+- Takes additional disk space
+
+### 🔧 How to create one:
+```
+CREATE INDEX idx_users_email ON users(email);
+```
+
+You can also use:
+
+- Composite indexes (multiple columns)
+- Unique indexes (to prevent duplicates)
+- Full-text indexes (for searching large text)
+
+## 🧬 Normalization
+
+### 🧠 What is Normalization?
+Normalization is the process of organizing data into tables to reduce redundancy and ensure data integrity.
+
+It means:
+
+- Avoiding duplicate data
+- Splitting large tables into related smaller tables
+- Using foreign keys to relate data
+
+### 🏗️ Example (Before Normalization):
+A students table might look like:
+
+id | name | course1 | course2
+---| ---- | ------- | -------
+1	| Alice	| Math	| Physics
+
+Problems:
+
+- Redundant structure
+- What if a student takes 5 courses?
+- Hard to query/filter on course
+
+### 🏗️ After Normalization:
+students table:
+
+id	| name
+---- | ----
+1	| Alice
+
+courses table:
+
+id	| name
+----| ----
+1	| Math
+2	| Physics
+
+student_courses (join table):
+
+student_id	| course_id
+--------| -------
+1	| 1
+1	| 2
+
+Now:
+
+- Flexible & scalable
+- No data duplication
+- Easy to query
+
+### 🧪 Normal Forms (NF)
+These are levels of normalization, each stricter than the last:
+
+Normal | Form	Rule
+------ | --------
+1NF	| No repeating groups, atomic values (each cell = 1 value)
+2NF	| 1NF + no partial dependencies (use IDs, not embedded data)
+3NF	| 2NF + no transitive dependencies (no derived or indirect info)
+
+💡 Most real-world databases aim for 3NF, then denormalize slightly if performance needs it.
+
+### 🧠 Summary
+
+Concept	| Indexing	| Normalization
+------- | --------  | -----------
+Purpose	| Speed up searching & filtering	| Eliminate redundancy, improve structure
+Main Benefit	| Faster queries	| Clean, consistent data
+Downside	| Slower writes, more disk use	| More complex queries (joins)
+Use When	| Query performance matters	| Designing schema for maintainability
+
