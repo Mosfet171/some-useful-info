@@ -15,4 +15,5 @@ I gathered here some information about IT-related technologies or guidelines tha
 	- RabbitMQ
 	- Celery
 	- Kafka
+* Azure Tools
 * Recent EU Guidelines
