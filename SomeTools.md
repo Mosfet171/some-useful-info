@@ -1,3 +1,10 @@
+# Some Commonly Used Tools & Frameworks
+- Flask & Django
+- Redis & Memcached
+- RabbitMQ
+- Celery
+- Kafka
+
 ## App Frameworks: Flask vs Django
 
 Both Flask and Django are Python web frameworks — they help you build web apps, APIs, and websites using Python. But they have very different philosophies.
