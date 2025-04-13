@@ -9,4 +9,5 @@ I gathered here some information about IT-related technologies or guidelines tha
 	- Types
 	- Relational 101
 * Load Balancers, API Gateways, Reverse Proxies
+* Caching
 * Recent EU Guidelines
